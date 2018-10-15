@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My first Vue app</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button type="button" v-on:click="getDeckNamesAndIds()">Click Me!</button>
+        <select v-model="selected" multiple>
+            <option v-for="name in decks" v-bind:value="name" v-on:click="deckSelected(name)">
+                {{name}}
+            </option>
+        </select>
+        <ol>
+            <li v-for="id in dueCards">
+                {{id}}
+            </li>
+        </ol>
+        <!--
+            {{ message }}
+        <button type="button" onclick="callAnkiConnect('p1', 'deckNames')">Click Me!</button>
+        <button type="button" onclick="callAnkiConnect('findCards', {'query':'deck:current'})">Click Me!</button>
+        
+        <select v-model="selected" multiple>
+            <option v-for="name in decks" v-bind:value="name" v-on:click="getDueCardsOfDeck(name)">
+                {{name}}
+            </option>
+        </select>
+        <span>Selected: {{selected}}</span><br>
+        <span>Due Cards</span><br>
+        
+    -->
+    </div>
+    <script src="js/anki.js"></script>
+
+</body>
+
+</html>
